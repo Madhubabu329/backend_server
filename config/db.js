@@ -31,7 +31,6 @@
 // module.exports = connectDB;
 
 
-
 const mongoose = require("mongoose");
 
 const connectDB = async () => {
@@ -42,11 +41,7 @@ const connectDB = async () => {
 
     console.log("Connecting to MongoDB:", process.env.MONGO_URL);
 
-    const conn = await mongoose.connect(process.env.MONGO_URL, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      serverSelectionTimeoutMS: 30000, // 30 seconds
-    });
+    const conn = await mongoose.connect(process.env.MONGO_URL);
 
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (err) {
