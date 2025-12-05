@@ -1,4 +1,8 @@
-const router = require("express").Router();
+const express = require("express");
+const router = express.Router();
+
+
+// const router = require("express").Router();
 const { sendOtp } = require("../controllers/otpController");
 const { verifyOtp, refreshToken, logout } = require("../controllers/authController");
 
@@ -8,3 +12,5 @@ router.post("/refresh-token", refreshToken);
 router.post("/logout", logout);
 
 module.exports = router;
+
+
